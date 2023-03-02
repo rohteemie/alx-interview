@@ -1,26 +1,23 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 from sys import argv, exit
 
-  """_summary_
-  """
+
 def solveNQueens(n):
     """Program that solves the N queens problem"""
     res = []
     queens = [-1] * n
-    # queens is a one-dimension array, like [1, 3, 0, 2] means
-    # index represents row no and value represents col no
 
     def dfs(index):
         """Recursively resolves the N queens problem"""
-        if index == len(queens):  # n queens have been placed correctly
+        if index == len(queens):
             res.append(queens[:])
-            return  # backtracking
+            return
         for i in range(len(queens)):
             queens[index] = i
-            if valid(index):  # pruning
+            if valid(index):
                 dfs(index + 1)
 
-    # check whether nth queens can be placed
+
     def valid(n):
         """Method that checks if a position in the board is valid"""
         for i in range(n):
@@ -30,8 +27,6 @@ def solveNQueens(n):
                 return False
         return True
 
-    # given queens = [1,3,0,2] this function returns
-    # [[0, 1], [1, 3], [2, 0], [3, 2]]
 
     def make_all_boards(res):
         """Method that builts the List that be returned"""
