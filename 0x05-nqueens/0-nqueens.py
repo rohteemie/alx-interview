@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 from sys import argv, exit
 
-
+  """_summary_
+  """
 def solveNQueens(n):
     """Program that solves the N queens problem"""
     res = []
