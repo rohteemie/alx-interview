@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from sys import argv, exit
+"""Tis the the documentation for core algorithm solution on NQueen"""
 
 
 def solveNQueens(n):
@@ -17,7 +18,6 @@ def solveNQueens(n):
             if valid(index):
                 dfs(index + 1)
 
-
     def valid(n):
         """Method that checks if a position in the board is valid"""
         for i in range(n):
@@ -26,7 +26,6 @@ def solveNQueens(n):
             if queens[i] == queens[n]:  # same column
                 return False
         return True
-
 
     def make_all_boards(res):
         """Method that builts the List that be returned"""
